@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AI-BootCamp.iml" filepath="$PROJECT_DIR$/.idea/AI-BootCamp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AI-BootCamp-2026-GIKI/.idea/AI-BootCamp-2026-GIKI.iml" filepath="$PROJECT_DIR$/../AI-BootCamp-2026-GIKI/.idea/AI-BootCamp-2026-GIKI.iml" />
     </modules>
   </component>
 </project>
