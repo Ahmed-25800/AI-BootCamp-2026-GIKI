@@ -21,6 +21,11 @@
 # 7. Annotations
 # 8. Saving Figures
 
+
+# if you get error for plotting the graph then uncomment following two line of code.
+import matplotlib
+matplotlib.use("TkAgg")
+
 import matplotlib.pyplot as plt
 
 # Sample Data

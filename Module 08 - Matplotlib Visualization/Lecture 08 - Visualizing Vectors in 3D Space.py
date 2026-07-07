@@ -1,7 +1,7 @@
 # Prepared by Muhammad Qasim Riaz (Lecturer - GIK Institute)
 
 # =====================================================
-# Lecture XX - Visualizing Vectors in 3D Space
+# Lecture 08 - Visualizing Vectors in 3D Space
 # =====================================================
 
 # A vector is a quantity that has
@@ -35,6 +35,12 @@
 # Every vector starts from an origin.
 #
 # Origin = (0,0,0)
+
+
+
+# if you get error for plotting the graph then uncomment following two line of code.
+import matplotlib
+matplotlib.use("TkAgg")
 
 import matplotlib.pyplot as plt
 import numpy as np

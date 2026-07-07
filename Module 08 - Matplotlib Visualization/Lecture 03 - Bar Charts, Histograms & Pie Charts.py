@@ -15,6 +15,11 @@
 # These charts are commonly used in Data Analysis,
 # Machine Learning and Artificial Intelligence.
 
+
+# if you get error for plotting the graph then uncomment following two line of code.
+import matplotlib
+matplotlib.use("TkAgg")
+
 import matplotlib.pyplot as plt
 
 # =====================================================

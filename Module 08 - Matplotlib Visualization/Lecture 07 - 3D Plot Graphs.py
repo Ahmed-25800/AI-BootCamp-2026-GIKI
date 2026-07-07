@@ -18,6 +18,11 @@
 # • Scientific Computing
 # • Mathematics
 
+
+# if you get error for plotting the graph then uncomment following two line of code.
+import matplotlib
+matplotlib.use("TkAgg")
+
 import matplotlib.pyplot as plt
 import numpy as np
 
