@@ -144,15 +144,15 @@ with open("marks.txt", "r") as file:
 # =====================================================
 # Example 10 - Practical Example
 # =====================================================
-
+#
 # Student names and marks are stored in two lists.
 
-student_names = ["Ali", "Ahmed", "Sara"]
-student_marks = [80, 75, 92]
+student_names = ["Ali", "Ahmed", "Sara", "Jamil"]
+student_marks = [80, 75, 92, 44]
 
 # Writing student information into a file.
 
-with open("student_result.txt", "w") as file:
+with open("student_result.csv", "w") as file:
 
     for i in range(len(student_names)):
 
@@ -168,6 +168,7 @@ with open("student_result.txt", "r") as file:
 
     for record in file:
 
+        print(record)
         data = record.strip().split(",")
 
         print("Name :", data[0])
