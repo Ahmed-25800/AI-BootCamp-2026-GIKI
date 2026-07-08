@@ -69,405 +69,405 @@ print(new_students)
 
 # axis=1 removes columns instead of rows.
 
-new_students = students.dropna(axis=1)
+# new_students = students.dropna(axis=1)
 
-print(new_students)
+# print(new_students)
 
-# =====================================================
-# Example 07 - Fill Missing Values
-# =====================================================
+# # =====================================================
+# # Example 07 - Fill Missing Values
+# # =====================================================
 
-# fillna() replaces missing values.
+# # fillna() replaces missing values.
 
-new_students = students.fillna("Unknown")
+# new_students = students.fillna("Unknown")
 
-print(new_students)
+# print(new_students)
 
-# =====================================================
-# Example 08 - Fill Numeric Missing Values
-# =====================================================
+# # =====================================================
+# # Example 08 - Fill Numeric Missing Values
+# # =====================================================
 
-new_students = students.copy()
+# new_students = students.copy()
 
-new_students["Marks"] = new_students["Marks"].fillna(0)
+# new_students["Marks"] = new_students["Marks"].fillna(0)
 
-print(new_students)
+# print(new_students)
 
-# =====================================================
-# Example 09 - Fill Missing Values using Mean
-# =====================================================
+# # =====================================================
+# # Example 09 - Fill Missing Values using Mean
+# # =====================================================
 
-mean_marks = students["Marks"].mean()
+# mean_marks = students["Marks"].mean()
 
-students["Marks"] = students["Marks"].fillna(mean_marks)
+# students["Marks"] = students["Marks"].fillna(mean_marks)
 
-print(students)
+# print(students)
 
-# =====================================================
-# Example 10 - Detect Duplicate Rows
-# =====================================================
+# # =====================================================
+# # Example 10 - Detect Duplicate Rows
+# # =====================================================
 
-# duplicated() returns True for duplicate rows.
+# # duplicated() returns True for duplicate rows.
 
-print(students.duplicated())
+# print(students.duplicated())
 
-# =====================================================
-# Example 11 - Remove Duplicate Rows
-# =====================================================
+# # =====================================================
+# # Example 11 - Remove Duplicate Rows
+# # =====================================================
 
-# drop_duplicates() removes duplicate rows.
+# # drop_duplicates() removes duplicate rows.
 
-students = students.drop_duplicates()
+# students = students.drop_duplicates()
 
-print(students)
+# print(students)
 
-# =====================================================
-# Example 12 - Convert Data Types
-# =====================================================
+# # =====================================================
+# # Example 12 - Convert Data Types
+# # =====================================================
 
-marks = pd.Series(["80","75","90"])
+# marks = pd.Series(["80","75","90"])
 
-print(marks)
+# print(marks)
 
-print(marks.dtype)
+# print(marks.dtype)
 
-marks = marks.astype(int)
+# marks = marks.astype(int)
 
-print(marks)
+# print(marks)
 
-print(marks.dtype)
+# print(marks.dtype)
 
-# =====================================================
-# Example 13 - Convert Float to Integer
-# =====================================================
+# # =====================================================
+# # Example 13 - Convert Float to Integer
+# # =====================================================
 
-numbers = pd.Series([82.5,74.2,91.8])
+# numbers = pd.Series([82.5,74.2,91.8])
 
-print(numbers)
+# print(numbers)
 
-numbers = numbers.astype(int)
+# numbers = numbers.astype(int)
 
-print(numbers)
+# print(numbers)
 
-# =====================================================
-# Example 14 - Replace Specific Values
-# =====================================================
+# # =====================================================
+# # Example 14 - Replace Specific Values
+# # =====================================================
 
-# replace() replaces one value with another.
+# # replace() replaces one value with another.
 
-students["Department"] = students["Department"].replace(
+# students["Department"] = students["Department"].replace(
 
-    "AI",
+#     "AI",
 
-    "Artificial Intelligence"
+#     "Artificial Intelligence"
 
-)
+# )
 
-print(students)
+# print(students)
 
-# =====================================================
-# Example 15 - Rename Columns
-# =====================================================
+# # =====================================================
+# # Example 15 - Rename Columns
+# # =====================================================
 
-# rename() changes column names.
+# # rename() changes column names.
 
-students = students.rename(
+# students = students.rename(
 
-    columns={
+#     columns={
 
-        "Marks":"Student Marks"
+#         "Marks":"Student Marks"
 
-    }
+#     }
 
-)
+# )
 
-print(students)
+# print(students)
 
-# =====================================================
-# Example 16 - Remove a Column
-# =====================================================
+# # =====================================================
+# # Example 16 - Remove a Column
+# # =====================================================
 
-# drop() removes rows or columns.
+# # drop() removes rows or columns.
 
-students = students.drop(
+# students = students.drop(
 
-    columns=["Department"]
+#     columns=["Department"]
 
-)
+# )
 
-print(students)
+# print(students)
 
-# =====================================================
-# Example 17 - Practical Example
-# =====================================================
+# # =====================================================
+# # Example 17 - Practical Example
+# # =====================================================
 
-student_data = pd.DataFrame({
+# student_data = pd.DataFrame({
 
-    "Name":["Ali","Ahmed","Sara","Ahmed",None],
+#     "Name":["Ali","Ahmed","Sara","Ahmed",None],
 
-    "Marks":[82,np.nan,91,74,60],
+#     "Marks":[82,np.nan,91,74,60],
 
-    "Department":["CS","AI","SE","AI",None]
+#     "Department":["CS","AI","SE","AI",None]
 
-})
+# })
 
-print("Original Data")
+# print("Original Data")
 
-print(student_data)
+# print(student_data)
 
-print()
+# print()
 
-# Remove duplicate rows.
+# # Remove duplicate rows.
 
-student_data = student_data.drop_duplicates()
+# student_data = student_data.drop_duplicates()
 
-# Replace missing names.
+# # Replace missing names.
 
-student_data["Name"] = student_data["Name"].fillna("Unknown")
+# student_data["Name"] = student_data["Name"].fillna("Unknown")
 
-# Replace missing departments.
+# # Replace missing departments.
 
-student_data["Department"] = student_data["Department"].fillna("Not Assigned")
+# student_data["Department"] = student_data["Department"].fillna("Not Assigned")
 
-# Replace missing marks with average.
+# # Replace missing marks with average.
 
-average_marks = student_data["Marks"].mean()
+# average_marks = student_data["Marks"].mean()
 
-student_data["Marks"] = student_data["Marks"].fillna(average_marks)
+# student_data["Marks"] = student_data["Marks"].fillna(average_marks)
 
-print("Cleaned Data")
+# print("Cleaned Data")
 
-print(student_data)
+# print(student_data)
 
-# =====================================================
-# Example 18 - Practical Example
-# =====================================================
+# # =====================================================
+# # Example 18 - Practical Example
+# # =====================================================
 
-print()
+# print()
 
-print("Missing Values")
+# print("Missing Values")
 
-print(student_data.isnull().sum())
+# print(student_data.isnull().sum())
 
-print()
+# print()
 
-print("Average Marks")
+# print("Average Marks")
 
-print(student_data["Marks"].mean())
+# print(student_data["Marks"].mean())
 
-print()
+# print()
 
-print("Highest Marks")
+# print("Highest Marks")
 
-print(student_data["Marks"].max())
+# print(student_data["Marks"].max())
 
-print()
+# print()
 
-print("Lowest Marks")
+# print("Lowest Marks")
 
-print(student_data["Marks"].min())
+# print(student_data["Marks"].min())
 
-# =====================================================
-# Example 19 - notnull()
-# =====================================================
+# # =====================================================
+# # Example 19 - notnull()
+# # =====================================================
 
-# notnull() returns True where data exists.
+# # notnull() returns True where data exists.
 
-print(student_data.notnull())
+# print(student_data.notnull())
 
-# =====================================================
-# Example 20 - Count Non-Missing Values
-# =====================================================
+# # =====================================================
+# # Example 20 - Count Non-Missing Values
+# # =====================================================
 
-# count() counts only non-missing values.
+# # count() counts only non-missing values.
 
-print(student_data.count())
+# print(student_data.count())
 
-# =====================================================
-# Example 21 - Display Unique Values
-# =====================================================
+# # =====================================================
+# # Example 21 - Display Unique Values
+# # =====================================================
 
-# unique() returns unique values.
+# # unique() returns unique values.
 
-print(student_data["Department"].unique())
+# print(student_data["Department"].unique())
 
-# =====================================================
-# Example 22 - Count Unique Values
-# =====================================================
+# # =====================================================
+# # Example 22 - Count Unique Values
+# # =====================================================
 
-# nunique() counts unique values.
+# # nunique() counts unique values.
 
-print(student_data["Department"].nunique())
+# print(student_data["Department"].nunique())
 
-# =====================================================
-# Example 23 - Count Frequency
-# =====================================================
+# # =====================================================
+# # Example 23 - Count Frequency
+# # =====================================================
 
-# value_counts() counts occurrences of each value.
+# # value_counts() counts occurrences of each value.
 
-print(student_data["Department"].value_counts())
+# print(student_data["Department"].value_counts())
 
-# =====================================================
-# Example 24 - Sorting Data
-# =====================================================
+# # =====================================================
+# # Example 24 - Sorting Data
+# # =====================================================
 
-# sort_values() sorts DataFrame.
+# # sort_values() sorts DataFrame.
 
-print(
+# print(
 
-student_data.sort_values(
+# student_data.sort_values(
 
-    by="Marks"
+#     by="Marks"
 
-)
+# )
 
-)
+# )
 
-# =====================================================
-# Example 25 - Sorting in Descending Order
-# =====================================================
+# # =====================================================
+# # Example 25 - Sorting in Descending Order
+# # =====================================================
 
-print(
+# print(
 
-student_data.sort_values(
+# student_data.sort_values(
 
-    by="Marks",
+#     by="Marks",
 
-    ascending=False
+#     ascending=False
 
-)
+# )
 
-)
+# )
 
-# =====================================================
-# Example 26 - Filling Missing Values Forward
-# =====================================================
+# # =====================================================
+# # Example 26 - Filling Missing Values Forward
+# # =====================================================
 
-# ffill() copies previous value.
+# # ffill() copies previous value.
 
-new_data = student_data.ffill()
+# new_data = student_data.ffill()
 
-print(new_data)
+# print(new_data)
 
-# =====================================================
-# Example 27 - Filling Missing Values Backward
-# =====================================================
+# # =====================================================
+# # Example 27 - Filling Missing Values Backward
+# # =====================================================
 
-# bfill() copies next value.
+# # bfill() copies next value.
 
-new_data = student_data.bfill()
+# new_data = student_data.bfill()
 
-print(new_data)
+# print(new_data)
 
-# =====================================================
-# Example 28 - Practical Example
-# =====================================================
+# # =====================================================
+# # Example 28 - Practical Example
+# # =====================================================
 
-student_data = pd.DataFrame({
+# student_data = pd.DataFrame({
 
-    "Name":["Ali","Ahmed","Sara","Ali",None],
+#     "Name":["Ali","Ahmed","Sara","Ali",None],
 
-    "Marks":[82,np.nan,91,82,70],
+#     "Marks":[82,np.nan,91,82,70],
 
-    "Department":["CS","AI","SE","CS",None]
+#     "Department":["CS","AI","SE","CS",None]
 
-})
+# })
 
-print("Original Data")
+# print("Original Data")
 
-print(student_data)
+# print(student_data)
 
-print()
+# print()
 
-# Remove duplicate rows.
+# # Remove duplicate rows.
 
-student_data = student_data.drop_duplicates()
+# student_data = student_data.drop_duplicates()
 
-# Replace missing names.
+# # Replace missing names.
 
-student_data["Name"] = student_data["Name"].fillna("Unknown")
+# student_data["Name"] = student_data["Name"].fillna("Unknown")
 
-# Replace missing departments.
+# # Replace missing departments.
 
-student_data["Department"] = student_data["Department"].fillna("Not Assigned")
+# student_data["Department"] = student_data["Department"].fillna("Not Assigned")
 
-# Replace missing marks using average.
+# # Replace missing marks using average.
 
-student_data["Marks"] = student_data["Marks"].fillna(
+# student_data["Marks"] = student_data["Marks"].fillna(
 
-    student_data["Marks"].mean()
+#     student_data["Marks"].mean()
 
-)
+# )
 
-# Sort marks.
+# # Sort marks.
 
-student_data = student_data.sort_values(
+# student_data = student_data.sort_values(
 
-    by="Marks",
+#     by="Marks",
 
-    ascending=False
+#     ascending=False
 
-)
+# )
 
-print("Cleaned Data")
+# print("Cleaned Data")
 
-print(student_data)
+# print(student_data)
 
-# =====================================================
-# Useful Pandas Functions Used in This Lecture
-# =====================================================
+# # =====================================================
+# # Useful Pandas Functions Used in This Lecture
+# # =====================================================
 
-# isnull()           -> Detect missing values
-# notnull()          -> Detect non-missing values
-# sum()              -> Count missing values
-# count()            -> Count non-missing values
-# any()              -> Check if missing values exist
-# dropna()           -> Remove missing values
-# fillna()           -> Replace missing values
-# ffill()            -> Forward fill missing values
-# bfill()            -> Backward fill missing values
-# duplicated()       -> Detect duplicate rows
-# drop_duplicates()  -> Remove duplicate rows
-# astype()           -> Convert data type
-# replace()          -> Replace values
-# rename()           -> Rename columns
-# unique()           -> Display unique values
-# nunique()          -> Count unique values
-# value_counts()     -> Count frequency of values
-# sort_values()      -> Sort DataFrame
-# drop()             -> Remove rows or columns
-# mean()             -> Average
-# max()              -> Maximum
-# min()              -> Minimum
-# copy()             -> Create a copy
+# # isnull()           -> Detect missing values
+# # notnull()          -> Detect non-missing values
+# # sum()              -> Count missing values
+# # count()            -> Count non-missing values
+# # any()              -> Check if missing values exist
+# # dropna()           -> Remove missing values
+# # fillna()           -> Replace missing values
+# # ffill()            -> Forward fill missing values
+# # bfill()            -> Backward fill missing values
+# # duplicated()       -> Detect duplicate rows
+# # drop_duplicates()  -> Remove duplicate rows
+# # astype()           -> Convert data type
+# # replace()          -> Replace values
+# # rename()           -> Rename columns
+# # unique()           -> Display unique values
+# # nunique()          -> Count unique values
+# # value_counts()     -> Count frequency of values
+# # sort_values()      -> Sort DataFrame
+# # drop()             -> Remove rows or columns
+# # mean()             -> Average
+# # max()              -> Maximum
+# # min()              -> Minimum
+# # copy()             -> Create a copy
 
-# =====================================================
-# Summary
-# =====================================================
+# # =====================================================
+# # Summary
+# # =====================================================
 
-# isnull()
-# Detects missing values.
+# # isnull()
+# # Detects missing values.
 
-# dropna()
-# Removes missing values.
+# # dropna()
+# # Removes missing values.
 
-# fillna()
-# Replaces missing values.
+# # fillna()
+# # Replaces missing values.
 
-# duplicated()
-# Detects duplicate rows.
+# # duplicated()
+# # Detects duplicate rows.
 
-# drop_duplicates()
-# Removes duplicate rows.
+# # drop_duplicates()
+# # Removes duplicate rows.
 
-# astype()
-# Converts data types.
+# # astype()
+# # Converts data types.
 
-# replace()
-# Replaces existing values.
+# # replace()
+# # Replaces existing values.
 
-# rename()
-# Renames columns.
+# # rename()
+# # Renames columns.
 
-# Data Cleaning is one of the most important
-# steps before Data Analysis and Machine Learning.
+# # Data Cleaning is one of the most important
+# # steps before Data Analysis and Machine Learning.

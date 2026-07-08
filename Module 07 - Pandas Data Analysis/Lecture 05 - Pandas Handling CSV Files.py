@@ -202,7 +202,7 @@ students.info()
 # """
 # )
 
-# print(students.describe())
+print(students.describe())
 
 # # =====================================================
 # # Example 12 - Reading Selected Columns
