@@ -42,25 +42,25 @@ print("Pandas Imported Successfully.")
 
 # A Series is a one-dimensional data structure.
 
-marks = pd.Series([82, 74, 91, 68, 88])
+# marks = pd.Series([82, 74, 91, 68, 88])
 
-print(marks)
+# print(marks)
 
-# =====================================================
-# Example 02 - Type of Series
-# =====================================================
+# # =====================================================
+# # Example 02 - Type of Series
+# # =====================================================
 
-print(type(marks))
+# print(type(marks))
 
-# =====================================================
-# Example 03 - Accessing Series Elements
-# =====================================================
+# # =====================================================
+# # Example 03 - Accessing Series Elements
+# # =====================================================
 
-print(marks[0])
+# print(marks[0])
 
-print(marks[2])
+# print(marks[2])
 
-print(marks[4])
+# print(marks[4])
 
 # =====================================================
 # Example 04 - Creating a DataFrame
@@ -77,87 +77,87 @@ students = pd.DataFrame({
 
 })
 
-print(students)
+# print(students)
 
-# =====================================================
-# Example 05 - Type of DataFrame
-# =====================================================
+
+# # =====================================================
+# # Example 05 - Type of DataFrame
+# # =====================================================
 
 print(type(students))
 
-# =====================================================
-# Example 06 - Rows and Columns
-# =====================================================
+# # =====================================================
+# # Example 06 - Rows and Columns
+# # =====================================================
 
 print("Rows and Columns")
 
 print(students.shape)
 
-# =====================================================
-# Example 07 - Columns
-# =====================================================
-
-# columns returns the names of all columns.
+# # =====================================================
+# # Example 07 - Columns
+# # =====================================================
+# # columns returns the names of all columns.
 
 print(students.columns)
 
-# =====================================================
-# Example 08 - Index
-# =====================================================
+# # =====================================================
+# # Example 08 - Index
+# # =====================================================
 
-# index returns the row numbers.
+# # index returns the row numbers.
 
-print(students.index)
+# print(students.index)
 
-# =====================================================
-# Example 09 - Accessing One Column
-# =====================================================
+# # =====================================================
+# # Example 09 - Accessing One Column
+# # =====================================================
 
-print(students["Name"])
+# print(students["Name"])
 
-print(students["Marks"])
+# print(students["Marks"])
 
-# =====================================================
-# Example 10 - Accessing Multiple Columns
-# =====================================================
+# # =====================================================
+# # Example 10 - Accessing Multiple Columns
+# # =====================================================
 
-print(students[["Name","Marks"]])
+# print(students[["Name","Marks"]])
 
-# =====================================================
-# Example 11 - Adding a New Column
-# =====================================================
+# # =====================================================
+# # Example 11 - Adding a New Column
+# # =====================================================
 
-students["Department"] = ["CS","AI","SE","DS"]
+# students["Department"] = ["CS","AI","SE","DS"]
 
-print(students)
+# print(students)
 
-# =====================================================
-# Example 12 - Modifying a Column
-# =====================================================
+# # =====================================================
+# # Example 12 - Modifying a Column
+# # =====================================================
 
-students["Marks"] = [85,76,95,70]
+# students["Marks"] = [85,76,95,70]
 
-print(students)
+# print(students)
 
-# =====================================================
-# Example 13 - Information about DataFrame
-# =====================================================
+# # =====================================================
+# # Example 13 - Information about DataFrame
+# # =====================================================
 
-# info() displays information about the DataFrame.
+# # info() displays information about the DataFrame.
 
-students.info()
+# students.info()
 
-# =====================================================
-# Example 14 - Statistical Summary
-# =====================================================
+# # =====================================================
+# # Example 14 - Statistical Summary
+# # =====================================================
 
-# describe() displays statistical information.
+# # describe() displays statistical information.
 
-print(students.describe())
+# print(students.describe())
 
-# =====================================================
-# Example 15 - Practical Example
-# =====================================================
+# # =====================================================
+# # Example 15 - Practical Example
+# # =====================================================
 
 student_data = pd.DataFrame({
 
@@ -183,31 +183,31 @@ print("Total Students")
 
 print(len(student_data))
 
-# |-----------------------------------------------------------------------|
-# |            DIFFERENCE BETWEEN SERIES AND DATAFRAME                    |
-# |-----------------------------------------------------------------------|
-# | Feature              | Series                 | DataFrame             |
-# |----------------------|------------------------|-----------------------|
-# | Dimensions           | One-Dimensional        | Two-Dimensional       |
-# | Stores               | Single Column          | Multiple Columns      |
-# | Rows                 | Yes                    | Yes                   |
-# | Columns              | No                     | Yes                   |
-# | Index                | Yes                    | Yes                   |
-# | Data Types           | Usually One            | Multiple Allowed      |
-# | Similar To           | Python List            | Excel Table           |
-# |-----------------------------------------------------------------------|
+# # |-----------------------------------------------------------------------|
+# # |            DIFFERENCE BETWEEN SERIES AND DATAFRAME                    |
+# # |-----------------------------------------------------------------------|
+# # | Feature              | Series                 | DataFrame             |
+# # |----------------------|------------------------|-----------------------|
+# # | Dimensions           | One-Dimensional        | Two-Dimensional       |
+# # | Stores               | Single Column          | Multiple Columns      |
+# # | Rows                 | Yes                    | Yes                   |
+# # | Columns              | No                     | Yes                   |
+# # | Index                | Yes                    | Yes                   |
+# # | Data Types           | Usually One            | Multiple Allowed      |
+# # | Similar To           | Python List            | Excel Table           |
+# # |-----------------------------------------------------------------------|
 
-# |-----------------------------------------------------------------------|
-# |            DIFFERENCE BETWEEN NUMPY ARRAY AND PANDAS DATAFRAME        |
-# |-----------------------------------------------------------------------|
-# | Feature              | NumPy ndarray          | Pandas DataFrame      |
-# |----------------------|------------------------|-----------------------|
-# | Data Type            | Numerical Data         | Tabular Data          |
-# | Rows & Columns       | No Labels              | Named Rows & Columns  |
-# | Column Names         | Not Available          | Available             |
-# | Index                | Numeric Only           | Custom Index Possible |
-# | Data Types           | Usually Same Type      | Multiple Types        |
-# | Speed                | Faster                 | Slightly Slower       |
-# | Used In              | Numerical Computing    | Data Analysis         |
-# | Machine Learning     | Yes                    | Yes                   |
-# |-----------------------------------------------------------------------|
+# # |-----------------------------------------------------------------------|
+# # |            DIFFERENCE BETWEEN NUMPY ARRAY AND PANDAS DATAFRAME        |
+# # |-----------------------------------------------------------------------|
+# # | Feature              | NumPy ndarray          | Pandas DataFrame      |
+# # |----------------------|------------------------|-----------------------|
+# # | Data Type            | Numerical Data         | Tabular Data          |
+# # | Rows & Columns       | No Labels              | Named Rows & Columns  |
+# # | Column Names         | Not Available          | Available             |
+# # | Index                | Numeric Only           | Custom Index Possible |
+# # | Data Types           | Usually Same Type      | Multiple Types        |
+# # | Speed                | Faster                 | Slightly Slower       |
+# # | Used In              | Numerical Computing    | Data Analysis         |
+# # | Machine Learning     | Yes                    | Yes                   |
+# # |-----------------------------------------------------------------------|

@@ -24,131 +24,131 @@ import numpy as np
 
 # Series() converts a Python list into a Pandas Series.
 
-marks = pd.Series([82,74,91,68,88])
+# marks = pd.Series([82,74,91,68,88])
 
-print(marks)
+# print(marks)
 
-# =====================================================
-# Example 02 - Series with Custom Index
-# =====================================================
+# # =====================================================
+# # Example 02 - Series with Custom Index
+# # =====================================================
 
-# index assigns custom labels to each value.
+# # index assigns custom labels to each value.
 
-marks = pd.Series(
+# marks = pd.Series(
 
-    [82,74,91],
+#     [82,74,91],
 
-    index=["Ali","Ahmed","Sara"]
+#     index=["Ali","Ahmed","Sara"]
 
-)
+# )
 
-print(marks)
+# print(marks)
 
-# =====================================================
-# Example 03 - Accessing Series Elements
-# =====================================================
+# # =====================================================
+# # Example 03 - Accessing Series Elements
+# # =====================================================
 
-# Elements can be accessed using labels or indexes.
+# # Elements can be accessed using labels or indexes.
 
-print(marks["Ali"])
+# print(marks["Ali"])
 
-print(marks["Sara"])
+# print(marks["Sara"])
 
-print(marks[1])
+# print(marks[1])
 
-# =====================================================
-# Example 04 - Modifying Series Elements
-# =====================================================
+# # =====================================================
+# # Example 04 - Modifying Series Elements
+# # =====================================================
 
-marks["Ahmed"] = 80
+# marks["Ahmed"] = 80
 
-print(marks)
+# print(marks)
 
-# =====================================================
-# Example 05 - Series from Dictionary
-# =====================================================
+# # =====================================================
+# # Example 05 - Series from Dictionary
+# # =====================================================
 
-# Dictionary keys become indexes.
+# # Dictionary keys become indexes.
 
-marks = pd.Series({
+# marks = pd.Series({
 
-    "Ali":82,
+#     "Ali":82,
 
-    "Ahmed":74,
+#     "Ahmed":74,
 
-    "Sara":91
+#     "Sara":91
 
-})
+# })
 
-print(marks)
+# print(marks)
 
-# =====================================================
-# Example 06 - Series using NumPy Array
-# =====================================================
+# # =====================================================
+# # Example 06 - Series using NumPy Array
+# # =====================================================
 
-numbers = np.array([10,20,30,40])
+# numbers = np.array([10,20,30,40])
 
-series = pd.Series(numbers)
+# series = pd.Series(numbers)
 
-print(series)
+# print(series)
 
-# =====================================================
-# Example 07 - Creating Empty Series
-# =====================================================
+# # =====================================================
+# # Example 07 - Creating Empty Series
+# # =====================================================
 
-series = pd.Series(dtype=int)
+# series = pd.Series(dtype=int)
 
-print(series)
+# print(series)
 
 # =====================================================
 # Example 08 - Series with Same Value
 # =====================================================
 
-series = pd.Series(
+# series = pd.Series(
 
-    100,
+#     100,
 
-    index=["A","B","C","D"]
+#     index=["A","B","C","D"]
 
-)
+# )
 
-print(series)
+# print(series)
 
-# =====================================================
-# Example 09 - Series Properties
-# =====================================================
+# # =====================================================
+# # Example 09 - Series Properties
+# # =====================================================
 
-marks = pd.Series(
+# marks = pd.Series(
 
-    [82,74,91],
+#     [82,74,91],
 
-    index=["Ali","Ahmed","Sara"]
+#     index=["Ali","Ahmed","Sara"]
 
-)
+# )
 
-print("Index")
+# print("Index")
 
-print(marks.index)
+# print(marks.index)
 
-print("Values")
+# print("Values")
 
-print(marks.values)
+# print(marks.values)
 
-print("Size")
+# print("Size")
 
-print(marks.size)
+# print(marks.size)
 
-print("Shape")
+# print("Shape")
 
-print(marks.shape)
+# print(marks.shape)
 
-print("Dimensions")
+# print("Dimensions")
 
-print(marks.ndim)
+# print(marks.ndim)
 
-print("Data Type")
+# print("Data Type")
 
-print(marks.dtype)
+# print(marks.dtype)
 
 # =====================================================
 # Example 10 - Practical Example

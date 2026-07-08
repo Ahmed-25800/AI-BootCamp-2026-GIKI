@@ -65,677 +65,677 @@ print("CSV File Created Successfully.")
 # read_csv() reads a CSV file and
 # creates a DataFrame automatically.
 
-print(
-    """
-=====================================================
-Example 03 - Reading CSV File
-=====================================================
-"""
-)
+# print(
+#     """
+# =====================================================
+# Example 03 - Reading CSV File
+# =====================================================
+# """
+# )
 
 students = pd.read_csv("students.csv")
 
 print(students)
 
-# =====================================================
-# Example 04 - Display First Five Records
-# =====================================================
+# # =====================================================
+# # Example 04 - Display First Five Records
+# # =====================================================
 
-# head() displays the first five rows.
+# # head() displays the first five rows.
 
-print(
-    """
-=====================================================
-Example 04 - Display First Five Records head() func
-=====================================================
-"""
-)
+# print(
+#     """
+# =====================================================
+# Example 04 - Display First Five Records head() func
+# =====================================================
+# """
+# )
 
 print(students.head())
 
+# # =====================================================
+# # Example 05 - Display Last Five Records
+# # =====================================================
+
+# # tail() displays the last five rows.
+
+# print(
+#     """
 # =====================================================
-# Example 05 - Display Last Five Records
+# Example 05 - Display Last Five Records tail() func
 # =====================================================
+# """
+# )
 
-# tail() displays the last five rows.
+# print(students.tail())
 
-print(
-    """
-=====================================================
-Example 05 - Display Last Five Records tail() func
-=====================================================
-"""
-)
+# # =====================================================
+# # Example 06 - Display Specific Number of Rows
+# # =====================================================
 
-print(students.tail())
-
+# print(
+#     """
 # =====================================================
-# Example 06 - Display Specific Number of Rows
+# Example 06 - Display Specific Records using head & tail func
 # =====================================================
-
-print(
-    """
-=====================================================
-Example 06 - Display Specific Records using head & tail func
-=====================================================
-"""
-)
+# """
+# )
 
 print(students.head(2))
 
 print(students.tail(2))
 
+# # =====================================================
+# # Example 07 - Display Column Names
+# # =====================================================
+
+# # columns returns all column names.
+# print(
+#     """
 # =====================================================
 # Example 07 - Display Column Names
 # =====================================================
+# """
+# )
 
-# columns returns all column names.
-print(
-    """
-=====================================================
-Example 07 - Display Column Names
-=====================================================
-"""
-)
+# print(students.columns)
 
-print(students.columns)
+# # =====================================================
+# # Example 08 - Display Row Index
+# # =====================================================
 
+# # index returns row indexes.
+# print(
+#     """
 # =====================================================
-# Example 08 - Display Row Index
+# Example 08 - Display row indexes
 # =====================================================
+# """
+# )
 
-# index returns row indexes.
-print(
-    """
-=====================================================
-Example 08 - Display row indexes
-=====================================================
-"""
-)
+# print(students.index)
 
-print(students.index)
+# # =====================================================
+# # Example 09 - Display Data Types
+# # =====================================================
 
+# # dtypes returns the data type of every column.
+
+# print(
+#     """
 # =====================================================
 # Example 09 - Display Data Types
 # =====================================================
+# """
+# )
 
-# dtypes returns the data type of every column.
+# print(students.dtypes)
 
-print(
-    """
-=====================================================
-Example 09 - Display Data Types
-=====================================================
-"""
-)
+# # =====================================================
+# # Example 10 - Display Information
+# # =====================================================
 
-print(students.dtypes)
+# # info() displays information about the DataFrame.
 
+# print(
+#     """
 # =====================================================
-# Example 10 - Display Information
+# Example 10 - Display Data-Frame Info using info func
 # =====================================================
-
-# info() displays information about the DataFrame.
-
-print(
-    """
-=====================================================
-Example 10 - Display Data-Frame Info using info func
-=====================================================
-"""
-)
+# """
+# )
 
 students.info()
 
+# # =====================================================
+# # Example 11 - Statistical Summary
+# # =====================================================
+
+# # describe() displays statistical information
+# # about numeric columns.
+
+# print(
+#     """
 # =====================================================
-# Example 11 - Statistical Summary
+# Example 11 - Display Statistical Summary using describe() func
 # =====================================================
+# """
+# )
 
-# describe() displays statistical information
-# about numeric columns.
+# print(students.describe())
 
-print(
-    """
-=====================================================
-Example 11 - Display Statistical Summary using describe() func
-=====================================================
-"""
-)
+# # =====================================================
+# # Example 12 - Reading Selected Columns
+# # =====================================================
 
-print(students.describe())
+# # usecols reads only selected columns.
 
+# print(
+#     """
 # =====================================================
 # Example 12 - Reading Selected Columns
 # =====================================================
+# """
+# )
 
-# usecols reads only selected columns.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 12 - Reading Selected Columns
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     usecols=["Name","Marks"]
 
-    "students.csv",
+# )
 
-    usecols=["Name","Marks"]
+# print(students)
 
-)
+# # =====================================================
+# # Example 13 - Reading Limited Rows
+# # =====================================================
 
-print(students)
+# # nrows reads only specified number of rows.
 
+# print(
+#     """
 # =====================================================
-# Example 13 - Reading Limited Rows
+# Example 13 - nrows reads only specified number of rows
 # =====================================================
+# """
+# )
 
-# nrows reads only specified number of rows.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 13 - nrows reads only specified number of rows
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     nrows=2
 
-    "students.csv",
+# )
 
-    nrows=2
+# print(students)
 
-)
+# # =====================================================
+# # Example 14 - Adding a New Student
+# # =====================================================
 
-print(students)
-
+# print(
+#     """
 # =====================================================
-# Example 14 - Adding a New Student
+# Example 14 - Adding new Student & combining two data frames using concat()
 # =====================================================
+# """
+# )
 
-print(
-    """
-=====================================================
-Example 14 - Adding new Student & combining two data frames using concat()
-=====================================================
-"""
-)
+# students = pd.read_csv("students.csv")
 
-students = pd.read_csv("students.csv")
+# new_student = pd.DataFrame({
 
-new_student = pd.DataFrame({
+#     "Name":["Usman"],
 
-    "Name":["Usman"],
+#     "Marks":[88],
 
-    "Marks":[88],
+#     "Department":["CS"]
 
-    "Department":["CS"]
+# })
 
-})
+# # concat() combines two DataFrames.
 
-# concat() combines two DataFrames.
+# students = pd.concat(
 
-students = pd.concat(
+#     [students,new_student],
 
-    [students,new_student],
+#     ignore_index=True
 
-    ignore_index=True
+# )
 
-)
+# print(students)
 
-print(students)
+# # =====================================================
+# # Example 15 - Saving Updated Data
+# # =====================================================
 
+# print(
+#     """
 # =====================================================
 # Example 15 - Saving Updated Data
 # =====================================================
+# """
+# )
 
-print(
-    """
-=====================================================
-Example 15 - Saving Updated Data
-=====================================================
-"""
-)
+# students.to_csv(
 
-students.to_csv(
+#     "students.csv",
 
-    "students.csv",
+#     index=False
 
-    index=False
+# )
 
-)
+# print("Updated File Saved.")
 
-print("Updated File Saved.")
+# # =====================================================
+# # Example 16 - Practical Example
+# # =====================================================
 
+# print(
+#     """
 # =====================================================
 # Example 16 - Practical Example
 # =====================================================
+# """
+# )
 
-print(
-    """
-=====================================================
-Example 16 - Practical Example
-=====================================================
-"""
-)
+# students = pd.read_csv("students.csv")
 
-students = pd.read_csv("students.csv")
+# print("Student Names")
 
-print("Student Names")
+# print(students["Name"])
 
-print(students["Name"])
+# print()
 
-print()
+# print("Student Marks")
 
-print("Student Marks")
+# print(students["Marks"])
 
-print(students["Marks"])
+# print()
 
-print()
+# print("Average Marks")
 
-print("Average Marks")
+# print(students["Marks"].mean())
 
-print(students["Marks"].mean())
+# print()
 
-print()
+# print("Highest Marks")
 
-print("Highest Marks")
+# print(students["Marks"].max())
 
-print(students["Marks"].max())
+# print()
 
-print()
+# print("Lowest Marks")
 
-print("Lowest Marks")
+# print(students["Marks"].min())
 
-print(students["Marks"].min())
+# # =====================================================
+# # Example 17 - Practical Example
+# # =====================================================
 
+# print(
+#     """
 # =====================================================
 # Example 17 - Practical Example
 # =====================================================
+# """
+# )
 
-print(
-    """
-=====================================================
-Example 17 - Practical Example
-=====================================================
-"""
-)
+# students = pd.read_csv("students.csv")
 
-students = pd.read_csv("students.csv")
+# print("Complete Dataset")
 
-print("Complete Dataset")
+# print(students)
 
-print(students)
+# students.to_csv(
 
-students.to_csv(
+#     "student_backup.csv",
 
-    "student_backup.csv",
+#     index=False
 
-    index=False
+# )
 
-)
+# print()
 
-print()
+# print("Backup File Created Successfully.")
 
-print("Backup File Created Successfully.")
+# # =====================================================
+# # Example 18 - Reading Specific Columns
+# # =====================================================
 
+# # usecols reads only the specified columns.
+
+# print(
+#     """
 # =====================================================
 # Example 18 - Reading Specific Columns
 # =====================================================
+# """
+# )
 
-# usecols reads only the specified columns.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 18 - Reading Specific Columns
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     usecols=["Name","Marks"]
 
-    "students.csv",
+# )
 
-    usecols=["Name","Marks"]
+# print(students)
 
-)
+# # =====================================================
+# # Example 19 - Reading Limited Rows
+# # =====================================================
 
-print(students)
+# # nrows reads only the required number of rows.
 
+# print(
+#     """
 # =====================================================
-# Example 19 - Reading Limited Rows
+# Example 19 - Reading Specific Rows
 # =====================================================
+# """
+# )
 
-# nrows reads only the required number of rows.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 19 - Reading Specific Rows
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     nrows=3
 
-    "students.csv",
+# )
 
-    nrows=3
+# print(students)
 
-)
+# # =====================================================
+# # Example 20 - Skipping Rows
+# # =====================================================
 
-print(students)
+# # skiprows skips the specified rows.
 
+# print(
+#     """
 # =====================================================
 # Example 20 - Skipping Rows
 # =====================================================
+# """
+# )
 
-# skiprows skips the specified rows.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 20 - Skipping Rows
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     skiprows=2
 
-    "students.csv",
+# )
 
-    skiprows=2
+# print(students)
 
-)
+# # =====================================================
+# # Example 21 - Reading Without Header
+# # =====================================================
 
-print(students)
+# # header=None tells Pandas that the file
+# # does not contain column names.
 
+# print(
+#     """
 # =====================================================
 # Example 21 - Reading Without Header
 # =====================================================
+# """
+# )
 
-# header=None tells Pandas that the file
-# does not contain column names.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 21 - Reading Without Header
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     header=None
 
-    "students.csv",
+# )
 
-    header=None
+# print(students)
 
-)
+# # =====================================================
+# # Example 22 - Assigning Column Names
+# # =====================================================
 
-print(students)
+# # names assigns new column names.
 
+# print(
+#     """
 # =====================================================
-# Example 22 - Assigning Column Names
+# Example 22 - Assigns new column names.
 # =====================================================
+# """
+# )
 
-# names assigns new column names.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 22 - Assigns new column names.
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     header=None,
 
-    "students.csv",
+#     names=["Student Name","Marks","Department"]
 
-    header=None,
+# )
 
-    names=["Student Name","Marks","Department"]
+# print(students)
 
-)
+# # =====================================================
+# # Example 23 -
+# # =====================================================
 
-print(students)
+# # index_col selects a column to become
+# # the row index.
 
+# print(
+#     """
 # =====================================================
-# Example 23 -
+# Example 23 - Setting an Index Column
 # =====================================================
+# """
+# )
 
-# index_col selects a column to become
-# the row index.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 23 - Setting an Index Column
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     index_col="Name"
 
-    "students.csv",
+# )
 
-    index_col="Name"
+# print(students)
 
-)
+# # =====================================================
+# # Example 24 - Reading Selected Data Types
+# # =====================================================
 
-print(students)
+# # dtype specifies the data type
+# # of columns.
 
+# print(
+#     """
 # =====================================================
-# Example 24 - Reading Selected Data Types
+# Example 24 - Reading Selecte Data Types
 # =====================================================
+# """
+# )
 
-# dtype specifies the data type
-# of columns.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 24 - Reading Selecte Data Types
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     dtype={"Marks":float}
 
-    "students.csv",
+# )
 
-    dtype={"Marks":float}
+# print(students)
 
-)
+# print(students.dtypes)
 
-print(students)
+# # =====================================================
+# # Example 25 - Handling Missing Values
+# # =====================================================
 
-print(students.dtypes)
+# # na_values converts specified values
+# # into NaN.
 
+# print(
+#     """
 # =====================================================
 # Example 25 - Handling Missing Values
 # =====================================================
+# """
+# )
 
-# na_values converts specified values
-# into NaN.
+# students = pd.read_csv(
 
-print(
-    """
-=====================================================
-Example 25 - Handling Missing Values
-=====================================================
-"""
-)
+#     "students.csv",
 
-students = pd.read_csv(
+#     na_values=["NA"]
 
-    "students.csv",
+# )
 
-    na_values=["NA"]
+# print(students)
 
-)
+# # =====================================================
+# # Example 26 - Saving Without Index
+# # =====================================================
 
-print(students)
-
+# print(
+#     """
 # =====================================================
 # Example 26 - Saving Without Index
 # =====================================================
+# """
+# )
 
-print(
-    """
-=====================================================
-Example 26 - Saving Without Index
-=====================================================
-"""
-)
+# students.to_csv(
 
-students.to_csv(
+#     "students_copy.csv",
 
-    "students_copy.csv",
+#     index=False
 
-    index=False
+# )
 
-)
+# print("File Saved.")
 
-print("File Saved.")
+# # =====================================================
+# # Example 27 -
+# # =====================================================
 
+# print(
+#     """
 # =====================================================
-# Example 27 -
+# Example 27 - Saving Selected Columns
 # =====================================================
+# """
+# )
 
-print(
-    """
-=====================================================
-Example 27 - Saving Selected Columns
-=====================================================
-"""
-)
+# students.to_csv(
 
-students.to_csv(
+#     "student_marks.csv",
 
-    "student_marks.csv",
+#     columns=["Name","Marks"],
 
-    columns=["Name","Marks"],
+#     index=False
 
-    index=False
+# )
 
-)
+# print("Selected Columns Saved.")
 
-print("Selected Columns Saved.")
+# # =====================================================
+# # Example 28 - Changing Separator
+# # =====================================================
 
+# # sep changes the separator.
+
+# print(
+#     """
 # =====================================================
 # Example 28 - Changing Separator
 # =====================================================
+# """
+# )
 
-# sep changes the separator.
+# students.to_csv(
 
-print(
-    """
-=====================================================
-Example 28 - Changing Separator
-=====================================================
-"""
-)
+#     "students_semicolon.csv",
 
-students.to_csv(
+#     sep=";",
 
-    "students_semicolon.csv",
+#     index=False
 
-    sep=";",
+# )
 
-    index=False
+# print("Semicolon Separated File Created.")
 
-)
+# # =====================================================
+# # Example 29 - Practical Example
+# # =====================================================
 
-print("Semicolon Separated File Created.")
-
+# print(
+#     """
 # =====================================================
-# Example 29 - Practical Example
+# Example 29 - Pracitcal Example
 # =====================================================
+# """
+# )
 
-print(
-    """
-=====================================================
-Example 29 - Pracitcal Example
-=====================================================
-"""
-)
+# students = pd.read_csv("students.csv")
 
-students = pd.read_csv("students.csv")
+# print(students)
 
-print(students)
+# print()
 
-print()
+# print("Total Students")
 
-print("Total Students")
+# print(len(students))
 
-print(len(students))
+# print()
 
-print()
+# print("Highest Marks")
 
-print("Highest Marks")
+# print(students["Marks"].max())
 
-print(students["Marks"].max())
+# print()
 
-print()
+# print("Lowest Marks")
 
-print("Lowest Marks")
+# print(students["Marks"].min())
 
-print(students["Marks"].min())
+# print()
 
-print()
+# print("Average Marks")
 
-print("Average Marks")
+# print(students["Marks"].mean())
 
-print(students["Marks"].mean())
+# # =====================================================
+# # Useful Pandas Functions Used in This Lecture
+# # =====================================================
 
-# =====================================================
-# Useful Pandas Functions Used in This Lecture
-# =====================================================
+# # read_csv()    -> Reads a CSV file
+# # to_csv()      -> Writes DataFrame into CSV
+# # head()        -> Displays first rows
+# # tail()        -> Displays last rows
+# # info()        -> Displays DataFrame information
+# # describe()    -> Displays statistical summary
+# # columns       -> Returns column names
+# # index         -> Returns row indexes
+# # dtypes        -> Returns data type of each column
+# # concat()      -> Combines DataFrames
+# # mean()        -> Calculates average
+# # max()         -> Returns maximum value
+# # min()         -> Returns minimum value
 
-# read_csv()    -> Reads a CSV file
-# to_csv()      -> Writes DataFrame into CSV
-# head()        -> Displays first rows
-# tail()        -> Displays last rows
-# info()        -> Displays DataFrame information
-# describe()    -> Displays statistical summary
-# columns       -> Returns column names
-# index         -> Returns row indexes
-# dtypes        -> Returns data type of each column
-# concat()      -> Combines DataFrames
-# mean()        -> Calculates average
-# max()         -> Returns maximum value
-# min()         -> Returns minimum value
+# # =====================================================
+# # Summary
+# # =====================================================
 
-# =====================================================
-# Summary
-# =====================================================
+# # read_csv()
+# # Used to read CSV files.
 
-# read_csv()
-# Used to read CSV files.
+# # to_csv()
+# # Used to save DataFrames as CSV files.
 
-# to_csv()
-# Used to save DataFrames as CSV files.
+# # head()
+# # Displays first rows.
 
-# head()
-# Displays first rows.
+# # tail()
+# # Displays last rows.
 
-# tail()
-# Displays last rows.
+# # info()
+# # Displays complete DataFrame information.
 
-# info()
-# Displays complete DataFrame information.
+# # describe()
+# # Displays statistical summary.
 
-# describe()
-# Displays statistical summary.
+# # concat()
+# # Combines multiple DataFrames.
 
-# concat()
-# Combines multiple DataFrames.
-
-# Pandas makes reading and writing CSV files
-# much easier than normal Python file handling.
+# # Pandas makes reading and writing CSV files
+# # much easier than normal Python file handling.

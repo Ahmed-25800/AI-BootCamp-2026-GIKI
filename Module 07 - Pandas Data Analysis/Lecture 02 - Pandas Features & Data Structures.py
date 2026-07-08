@@ -53,50 +53,51 @@ print(numbers[1])
 
 print(marks["Sara"])
 
-# NumPy uses numeric indexes.
-# Pandas Series can use meaningful labels.
 
-# =====================================================
-# 4. When should we use Python Lists?
-# =====================================================
+# # NumPy uses numeric indexes.
+# # Pandas Series can use meaningful labels.
 
-# Use Lists for:
-# - Small data
-# - Learning Python
-# - General Programming
-# - Mixed Data Types
-# - Simple Loops
+# # =====================================================
+# # 4. When should we use Python Lists?
+# # =====================================================
 
-students = ["Ali","Ahmed","Sara"]
-print(students)
+# # Use Lists for:
+# # - Small data
+# # - Learning Python
+# # - General Programming
+# # - Mixed Data Types
+# # - Simple Loops
 
-# =====================================================
-# 5. When should we use NumPy Arrays?
-# =====================================================
+# students = ["Ali","Ahmed","Sara"]
+# print(students)
 
-# Use NumPy for:
-# - Numerical Computing
-# - Mathematical Operations
-# - Linear Algebra
-# - Image Processing
-# - Scientific Computing
-# - Deep Learning
+# # =====================================================
+# # 5. When should we use NumPy Arrays?
+# # =====================================================
 
-marks = np.array([82,74,91])
+# # Use NumPy for:
+# # - Numerical Computing
+# # - Mathematical Operations
+# # - Linear Algebra
+# # - Image Processing
+# # - Scientific Computing
+# # - Deep Learning
 
-print(marks + 5)
+# marks = np.array([82,74,91])
 
-# =====================================================
-# 6. When should we use Pandas Series?
-# =====================================================
+# print(marks + 5)
 
-# Use Series for:
-# - Labeled Data
-# - One Column of Data
-# - CSV Files
-# - Data Cleaning
-# - Filtering
-# - Statistics
+# # =====================================================
+# # 6. When should we use Pandas Series?
+# # =====================================================
+
+# # Use Series for:
+# # - Labeled Data
+# # - One Column of Data
+# # - CSV Files
+# # - Data Cleaning
+# # - Filtering
+# # - Statistics
 
 marks = pd.Series(
     [82,74,91],
@@ -106,10 +107,11 @@ marks = pd.Series(
 print(marks)
 
 print(marks["Ahmed"])
+print("------------------------------------------------------------------------------\n")
 
-# =====================================================
-# 7. File Handling vs Pandas
-# =====================================================
+# # =====================================================
+# # 7. File Handling vs Pandas
+# # =====================================================
 
 with open("students.csv","w") as file:
     file.write("Name,Marks,Department\n")
@@ -132,6 +134,7 @@ with open("students.csv","r") as file:
         data = line.strip().split(",")
 
         print(data[0],data[1],data[2])
+        
 
 print("\nUsing Pandas")
 
@@ -142,31 +145,35 @@ students = pd.read_csv("students.csv")
 
 print(students)
 
-# =====================================================
-# 8. Searching a Student
-# =====================================================
 
-print("\nSearching Using File Handling")
+# # =====================================================
+# # 8. Searching a Student
+# # =====================================================
 
-with open("students.csv","r") as file:
+# print("\nSearching Using File Handling")
 
-    next(file)
+# with open("students.csv","r") as file:
 
-    for line in file:
+#     next(file)
 
-        data = line.strip().split(",")
+#     for line in file:
 
-        if data[0] == "Ali":
+#         data = line.strip().split(",")
 
-            print(data)
+#         if data[0] == "Ali":
 
-print("\nSearching Using Pandas")
+#             print(data)
 
-print(students[students["Name"]=="Ali"])
+# print("\nSearching Using Pandas")
 
-# =====================================================
-# 9. Calculating Average
-# =====================================================
+# students = pd.DataFrame(students)
+
+# # 2. Now your exact line will work perfectly!
+# print(students[students["Name"] == "Ali"])
+
+# # =====================================================
+# # 9. Calculating Average
+# # =====================================================
 
 print("\nAverage Using File Handling")
 
@@ -182,9 +189,11 @@ with open("students.csv","r") as file:
         data = line.strip().split(",")
 
         total = total + int(data[1])
-
+       
         count = count + 1
-
+        
+print(total)
+print(count)      
 print(total/count)
 
 print("\nAverage Using Pandas")
@@ -193,72 +202,72 @@ print("\nAverage Using Pandas")
 
 print(students["Marks"].mean())
 
-# =====================================================
-# 10. Filtering Passed Students
-# =====================================================
+# # =====================================================
+# # 10. Filtering Passed Students
+# # =====================================================
 
-print("\nPassed Students Using File Handling")
+# print("\nPassed Students Using File Handling")
 
-with open("students.csv","r") as file:
+# with open("students.csv","r") as file:
 
-    next(file)
+#     next(file)
 
-    for line in file:
+#     for line in file:
 
-        data = line.strip().split(",")
+#         data = line.strip().split(",")
 
-        marks = int(data[1])
+#         marks = int(data[1])
 
-        if marks >= 50:
+#         if marks >= 50:
 
-            print(data)
+#             print(data)
 
-print("\nPassed Students Using Pandas")
+# print("\nPassed Students Using Pandas")
 
-print(students[students["Marks"]>=50])
+# print(students[students["Marks"]>=50])
 
-# =====================================================
-# 11. Why Pandas is Essential for AI & ML
-# =====================================================
+# # =====================================================
+# # 11. Why Pandas is Essential for AI & ML
+# # =====================================================
 
-# Imagine a CSV file containing millions of records.
-#
-# Using File Handling:
-# - Read line by line
-# - Split every line
-# - Convert strings into numbers
-# - Search using loops
-# - Calculate statistics manually
-# - Write many lines of code
-#
-# Using Pandas:
-# - Read using one line
-# - Filter without loops
-# - Calculate statistics instantly
-# - Handle missing values
-# - Sort data
-# - Group data
-# - Prepare datasets for Machine Learning
+# # Imagine a CSV file containing millions of records.
+# #
+# # Using File Handling:
+# # - Read line by line
+# # - Split every line
+# # - Convert strings into numbers
+# # - Search using loops
+# # - Calculate statistics manually
+# # - Write many lines of code
+# #
+# # Using Pandas:
+# # - Read using one line
+# # - Filter without loops
+# # - Calculate statistics instantly
+# # - Handle missing values
+# # - Sort data
+# # - Group data
+# # - Prepare datasets for Machine Learning
 
 big_data = pd.read_csv("students.csv")
 
 print(big_data)
 
-# =====================================================
-# Summary
-# =====================================================
+# # =====================================================
+# # Summary
+# # =====================================================
 
-# Python List
-# - Small data
-# - General programming
+# # Python List
+# # - Small data
+# # - General programming
 
-# NumPy Array
-# - Numerical computing
-# - Mathematical operations
-# - Scientific computing
+# # NumPy Array
+# # - Numerical computing
+# # - Mathematical operations
+# # - Scientific computing
 
-# Pandas Series / DataFrame
-# - Data analysis
-# - CSV files
-# - Data cleaning
-# - Machine Learning
+# # Pandas Series / DataFrame
+# # - Data analysis
+# # - CSV files
+# # - Data cleaning
+# # - Machine Learning

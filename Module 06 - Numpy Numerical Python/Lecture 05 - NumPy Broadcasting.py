@@ -6,9 +6,9 @@
 
 # Broadcasting allows NumPy to perform mathematical
 # operations on arrays having different shapes.
-#
+
 # Broadcasting removes the need to write loops.
-#
+
 # Common Types:
 # 1. Scalar Broadcasting
 # 2. Row Broadcasting
@@ -23,330 +23,331 @@
 # | Matrix Broadcasting   | Two arrays with compatible shapes are automatically expanded along dimensions of size `1`. | `(3,1) + (1,3)` |
 
 
-import numpy as np
+# import numpy as np
 
-# =====================================================
-# Example 01 - Scalar Broadcasting (Addition)
-# =====================================================
+# # =====================================================
+# # Example 01 - Scalar Broadcasting (Addition)
+# # =====================================================
 
-numbers = np.array([10, 20, 30, 40, 50])
+# numbers = np.array([10, 20, 30, 40, 50])
 
-print(numbers)
+# print(numbers)
 
-result = numbers + 5
+# result = numbers + 5
 
-print(result)
+# print(result)
 
-# =====================================================
-# Example 02 - Scalar Broadcasting (Multiplication)
-# =====================================================
+# # =====================================================
+# # Example 02 - Scalar Broadcasting (Multiplication)
+# # =====================================================
 
-numbers = np.array([10, 20, 30, 40, 50])
+# numbers = np.array([10, 20, 30, 40, 50])
 
-result = numbers * 2
+# result = numbers * 2
 
-print(result)
+# print(result)
 
-# =====================================================
-# Example 03 - Scalar Broadcasting (Division)
-# =====================================================
+# # =====================================================
+# # Example 03 - Scalar Broadcasting (Division)
+# # =====================================================
 
-numbers = np.array([10, 20, 30, 40, 50])
+# numbers = np.array([10, 20, 30, 40, 50])
 
-result = numbers / 10
+# result = numbers / 10
 
-print(result)
+# print(result)
 
-# =====================================================
-# Example 04 - Row Broadcasting
-# =====================================================
+# # =====================================================
+# # Example 04 - Row Broadcasting
+# # =====================================================
 
-matrix = np.array([
-    [10, 20, 30],
-    [40, 50, 60],
-    [70, 80, 90]
-])
+# matrix = np.array([
+#     [10, 20, 30],
+#     [40, 50, 60],
+#     [70, 80, 90]
+# ])
 
-row = np.array([1, 2, 3])
+# row = np.array([1, 2, 3])
 
-print(matrix)
 
-print(row)
+# print(matrix)
 
-result = matrix + row
+# print(row)
 
-print(result)
+# result = matrix + row 
+
+# print(result)
 
 # =====================================================
 # Example 05 - Another Row Broadcasting
 # =====================================================
+import numpy as np
+# matrix = np.array([
+#     [5, 10, 15],
+#     [20, 25, 30]
+# ])
 
-matrix = np.array([
-    [5, 10, 15],
-    [20, 25, 30]
-])
+# row = np.array([100, 200, 300])
 
-row = np.array([100, 200, 300])
+# print(matrix + row)
 
-print(matrix + row)
+# # =====================================================
+# # Example 06 - Column Broadcasting
+# # =====================================================
 
-# =====================================================
-# Example 06 - Column Broadcasting
-# =====================================================
+# matrix = np.array([
+#     [10, 20, 30],
+#     [40, 50, 60],
+#     [70, 80, 90]
+# ])
 
-matrix = np.array([
-    [10, 20, 30],
-    [40, 50, 60],
-    [70, 80, 90]
-])
+# column = np.array([
+#     [1],
+#     [2],
+#     [3]
+# ])
 
-column = np.array([
-    [1],
-    [2],
-    [3]
-])
+# print(matrix)
 
-print(matrix)
+# print(column)
 
-print(column)
+# result = matrix + column
 
-result = matrix + column
+# print(result)
 
-print(result)
+# # =====================================================
+# # Example 07 - Column Broadcasting using reshape()
+# # =====================================================
 
-# =====================================================
-# Example 07 - Column Broadcasting using reshape()
-# =====================================================
+# column = np.array([10, 20, 30]).reshape(3, 1)
 
-column = np.array([10, 20, 30]).reshape(3, 1)
+# print(column)
 
-print(column)
+# print(matrix + column)
 
-print(matrix + column)
+# # =====================================================
+# # Example 08 - Matrix Broadcasting
+# # =====================================================
 
-# =====================================================
-# Example 08 - Matrix Broadcasting
-# =====================================================
+# matrix1 = np.array([
+#     [10, 20],
+#     [30, 40]
+# ])
 
-matrix1 = np.array([
-    [10, 20],
-    [30, 40]
-])
+# matrix2 = np.array([
+#     [1, 2],
+#     [3, 4]
+# ])
 
-matrix2 = np.array([
-    [1, 2],
-    [3, 4]
-])
+# print(matrix1)
 
-print(matrix1)
+# print(matrix2)
 
-print(matrix2)
+# print(matrix1 + matrix2)
 
-print(matrix1 + matrix2)
+# # =====================================================
+# # Example 09 - Matrix Multiplication by Scalar
+# # =====================================================
 
-# =====================================================
-# Example 09 - Matrix Multiplication by Scalar
-# =====================================================
+# matrix = np.array([
+#     [2, 4],
+#     [6, 8]
+# ])
 
-matrix = np.array([
-    [2, 4],
-    [6, 8]
-])
+# print(matrix * 5)
 
-print(matrix * 5)
+# # =====================================================
+# # Example 10 - Broadcasting with One Row
+# # =====================================================
 
-# =====================================================
-# Example 10 - Broadcasting with One Row
-# =====================================================
+# matrix = np.array([
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ])
 
-matrix = np.array([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-])
+# print(matrix)
 
-print(matrix)
+# print(matrix + [10, 20, 30])
 
-print(matrix + [10, 20, 30])
+# # =====================================================
+# # Example 11 - Broadcasting with One Column
+# # =====================================================
 
-# =====================================================
-# Example 11 - Broadcasting with One Column
-# =====================================================
+# matrix = np.array([
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ])
 
-matrix = np.array([
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-])
+# print(matrix + np.array([[100], [200], [300]]))
 
-print(matrix + np.array([[100], [200], [300]]))
+# # =====================================================
+# # Example 12 - Broadcasting in Two Arrays
+# # =====================================================
 
-# =====================================================
-# Example 12 - Broadcasting in Two Arrays
-# =====================================================
+# array1 = np.array([10, 20, 30]) 
 
-array1 = np.array([10, 20, 30])
+# array2 = np.array([2, 4, 6])
 
-array2 = np.array([2, 4, 6])
+# print(array1 + array2) 
 
-print(array1 + array2)
+# print(array1 * array2)
 
-print(array1 * array2)
+# # =====================================================
+# # Example 13 - Using Broadcasting to Convert Marks
+# # =====================================================
 
-# =====================================================
-# Example 13 - Using Broadcasting to Convert Marks
-# =====================================================
+# marks = np.array([60, 70, 80, 90])
 
-marks = np.array([60, 70, 80, 90])
+# # Add grace marks to every student.
 
-# Add grace marks to every student.
+# updated_marks = marks + 5
 
-updated_marks = marks + 5
+# print(updated_marks)
 
-print(updated_marks)
+# # =====================================================
+# # Example 14 - Practical Example
+# # =====================================================
 
-# =====================================================
-# Example 14 - Practical Example
-# =====================================================
+# student_marks = np.array([
+#     [82, 75, 90],
+#     [65, 88, 79],
+#     [91, 84, 86]
+# ])
 
-student_marks = np.array([
-    [82, 75, 90],
-    [65, 88, 79],
-    [91, 84, 86]
-])
+# # Bonus marks for each subject.
 
-# Bonus marks for each subject.
+# bonus = np.array([2, 3, 5])
 
-bonus = np.array([2, 3, 5])
+# print(student_marks)
 
-print(student_marks)
+# print(student_marks + bonus)
 
-print(student_marks + bonus)
+# # =====================================================
+# # Example 15 - Practical Example
+# # =====================================================
 
-# =====================================================
-# Example 15 - Practical Example
-# =====================================================
+# sales = np.array([
+#     [100, 120, 150],
+#     [200, 180, 220],
+#     [300, 280, 350]
+# ])
 
-sales = np.array([
-    [100, 120, 150],
-    [200, 180, 220],
-    [300, 280, 350]
-])
+# # Tax for each branch.
 
-# Tax for each branch.
+# tax = np.array([
+#     [10],
+#     [20],
+#     [30]
+# ])
 
-tax = np.array([
-    [10],
-    [20],
-    [30]
-])
+# print(sales)
 
-print(sales)
+# print(sales + tax)
 
-print(sales + tax)
+# # =====================================================
+# # Example 16 - Broadcasting Rules
+# # =====================================================
 
-# =====================================================
-# Example 16 - Broadcasting Rules
-# =====================================================
+# # Rule 1:
+# # If two arrays have exactly the same shape,
+# # broadcasting is possible.
 
-# Rule 1:
-# If two arrays have exactly the same shape,
-# broadcasting is possible.
+# a = np.array([
+#     [1, 2],
+#     [3, 4]
+# ])
 
-a = np.array([
-    [1, 2],
-    [3, 4]
-])
-
-b = np.array([
-    [10, 20],
-    [30, 40]
-])
-
-print(a + b)
-
-# =====================================================
-# Example 17 - Broadcasting Rules
-# =====================================================
-
-# Rule 2:
-# If one array has only one value,
-# it is broadcast to every element.
-
-numbers = np.array([10, 20, 30])
-
-print(numbers + 100)
-
-# =====================================================
-# Example 18 - Broadcasting Rules
-# =====================================================
-
-# Rule 3:
-# If one dimension is 1,
-# NumPy stretches that dimension automatically.
-
-matrix = np.array([
-    [10, 20, 30],
-    [40, 50, 60]
-])
-
-row = np.array([1, 2, 3])
-
-print(matrix + row)
-
-# =====================================================
-# Example 19 - Incompatible Shapes
-# =====================================================
-
-# Broadcasting is not possible because
-# the shapes are incompatible.
-
-a = np.array([10, 20, 30])
-
-b = np.array([1, 2])
-
-# Uncomment the following statement
-# to see the error.
+# b = np.array([
+#     [10, 20],
+#     [30, 40]
+# ])
 
 # print(a + b)
 
-# =====================================================
-# Example 20 - Practical Example
-# =====================================================
+# # =====================================================
+# # Example 17 - Broadcasting Rules
+# # =====================================================
 
-student_marks = np.array([
-    [80, 75, 90],
-    [65, 60, 70],
-    [95, 92, 88]
-])
+# # Rule 2:
+# # If one array has only one value,
+# # it is broadcast to every element.
 
-# Add 5 marks to every student.
+# numbers = np.array([10, 20, 30])
 
-student_marks = student_marks + 5
+# print(numbers + 100)
 
-print(student_marks)
+# # =====================================================
+# # Example 18 - Broadcasting Rules
+# # =====================================================
 
-# Multiply every mark by 2.
+# # Rule 3:
+# # If one dimension is 1,
+# # NumPy stretches that dimension automatically.
 
-print(student_marks * 2)
+# matrix = np.array([
+#     [10, 20, 30],
+#     [40, 50, 60]
+# ])
 
-# =====================================================
-# Example 21 - Normalizing Student Marks
-# =====================================================
+# row = np.array([1, 2, 3])
 
-marks = np.array([
-    [82, 75, 90],
-    [65, 88, 79],
-    [91, 84, 86]
-])
+# print(matrix + row)
 
-# Maximum marks of each subject.
+# # =====================================================
+# # Example 19 - Incompatible Shapes
+# # =====================================================
 
-maximum = np.array([100, 100, 100])
+# # Broadcasting is not possible because
+# # the shapes are incompatible.
 
-percentage = (marks / maximum) * 100
+# a = np.array([10, 20, 30])
 
-print(percentage)
+# b = np.array([1, 2])
+
+# # Uncomment the following statement
+# # to see the error.
+
+# # print(a + b)
+
+# # =====================================================
+# # Example 20 - Practical Example
+# # =====================================================
+
+# student_marks = np.array([
+#     [80, 75, 90],
+#     [65, 60, 70],
+#     [95, 92, 88]
+# ])
+
+# # Add 5 marks to every student.
+
+# student_marks = student_marks + 5
+
+# print(student_marks)
+
+# # Multiply every mark by 2.
+
+# print(student_marks * 2)
+
+# # =====================================================
+# # Example 21 - Normalizing Student Marks
+# # =====================================================
+
+# marks = np.array([
+#     [82, 75, 90],
+#     [65, 88, 79],
+#     [91, 84, 86]
+# ])
+
+# # Maximum marks of each subject.
+
+# maximum = np.array([100, 100, 100])
+
+# percentage = (marks / maximum) * 100
+
+# print(percentage)
 
 # This is a realistic use of broadcasting: a 1×3 array (maximum) is automatically broadcast across all rows of the
 # marks matrix. It will give you an early glimpse of how broadcasting is used to normalize datasets before training
