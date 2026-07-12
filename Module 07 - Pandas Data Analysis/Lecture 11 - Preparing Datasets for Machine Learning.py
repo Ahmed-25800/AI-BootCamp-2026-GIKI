@@ -30,12 +30,12 @@ print(students)
 # print(students.describe())
 
 # Example 03 - Missing Values
-print(students.isnull().sum())
+# print(students.isnull().sum())
 # students['Age']=students['Age'].fillna(students['Age'].mean())
 # students['Marks']=students['Marks'].fillna(students['Marks'].mean())
-
+# print(students.isnull().sum())
 # # Example 04 - Remove Duplicates
-# students=students.drop_duplicates()
+students=students.drop_duplicates()
 
 # # Example 05 - Standardize Text
 # students['Name']=students['Name'].str.strip().str.title()
@@ -46,7 +46,9 @@ print(students.isnull().sum())
 # students['Marks']=students['Marks'].astype(int)
 
 # # Example 07 - Rename Column
-# students=students.rename(columns={'StudyHours':'Study_Hours'})
+students=students.rename(columns={'StudyHours':'Study_Hours'})
+print(students)
+
 
 # # Example 08 - Create New Feature
 # students['Result']=students['Marks'].apply(lambda x:'Pass' if x>=50 else 'Fail')
