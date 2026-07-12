@@ -58,23 +58,23 @@ lambda x:"Pass" if x>=50 else "Fail"
 
 print(students)
 
-# =====================================================
-# Example 03 - Lambda Function
-# =====================================================
+# # =====================================================
+# # Example 03 - Lambda Function
+# # =====================================================
 
-# A lambda function is an
-# anonymous (unnamed) function.
-#
-# It is mostly used with
-# apply() and map().
+# # A lambda function is an
+# # anonymous (unnamed) function.
+# #
+# # It is mostly used with
+# # apply() and map().
 
 square = lambda x:x*x
 
-print(square(5))
+print(square(9))
 
-# =====================================================
-# Example 04 - apply() on Multiple Columns
-# =====================================================
+# # =====================================================
+# # Example 04 - apply() on Multiple Columns
+# # =====================================================
 
 students["Percentage"] = students["Marks"].apply(
 
@@ -84,9 +84,9 @@ lambda x:x/100*100
 
 print(students)
 
-# =====================================================
-# Example 05 - Practical Example
-# =====================================================
+# # =====================================================
+# # Example 05 - Practical Example
+# # =====================================================
 
 students["Grade"] = students["Marks"].apply(
 

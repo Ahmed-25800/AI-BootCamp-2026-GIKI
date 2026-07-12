@@ -34,17 +34,17 @@ print(students)
 # Example 01 - Basic Pivot Table
 # =====================================================
 
-print(
+# print(
 
-students.pivot_table(
+# students.pivot_table(
 
-values="Marks",
+# values="Marks",
 
-index="Department"
+# index="Department"
 
-)
+# )
 
-)
+# )
 
 # =====================================================
 # Example 02 - Mean
@@ -64,27 +64,27 @@ aggfunc="mean"
 
 )
 
-# =====================================================
-# Example 03 - Sum
-# =====================================================
+# # =====================================================
+# # Example 03 - Sum
+# # =====================================================
 
-print(
+# print(
 
-students.pivot_table(
+# students.pivot_table(
 
-values="Marks",
+# values="Marks",
 
-index="Department",
+# index="Department",
 
-aggfunc="sum"
+# aggfunc="sum"
 
-)
+# )
 
-)
+# )
 
-# =====================================================
-# Example 04 - Two-Level Pivot
-# =====================================================
+# # =====================================================
+# # Example 04 - Two-Level Pivot
+# # =====================================================
 
 print(
 

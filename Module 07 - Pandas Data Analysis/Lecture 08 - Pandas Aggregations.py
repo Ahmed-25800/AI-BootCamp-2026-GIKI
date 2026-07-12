@@ -27,7 +27,7 @@ students = pd.DataFrame({
 
     "Marks":[82,75,91,60,87,78]
 
-})
+}) 
 
 print(students)
 
@@ -37,7 +37,7 @@ print(students)
 
 print(
 
-students.groupby("Department").sum()
+students.groupby("Department").max()
 
 )
 
@@ -45,35 +45,36 @@ students.groupby("Department").sum()
 # Example 02 - Mean
 # =====================================================
 
-print(
+# print(
 
-students.groupby("Department").mean()
+# students.groupby("Department").mean()
 
-)
+# )
+# print(students.groupby("Department").mean())
 
-# =====================================================
-# Example 03 - Maximum
-# =====================================================
+# # =====================================================
+# # Example 03 - Maximum
+# # =====================================================
 
-print(
+# print(
 
-students.groupby("Department").max()
+# students.groupby("Department").max()
 
-)
+# )
 
-# =====================================================
-# Example 04 - Minimum
-# =====================================================
+# # =====================================================
+# # Example 04 - Minimum
+# # =====================================================
 
-print(
+# print(
 
-students.groupby("Department").min()
+# students.groupby("Department").min()
 
-)
+# )
 
-# =====================================================
-# Example 05 - Count
-# =====================================================
+# # =====================================================
+# # Example 05 - Count
+# # =====================================================
 
 print(
 
@@ -81,17 +82,18 @@ students.groupby("Department").count()
 
 )
 
-# =====================================================
-# Example 06 - Multiple Aggregations
-# =====================================================
+# # =====================================================
+# # Example 06 - Multiple Aggregations
+# # =====================================================
 
-print(
+# print(
 
-students.groupby("Department").agg(
+# students.groupby("Department").agg(
 
-["min","max","mean","sum"]
+# ["min","max","mean","sum"]
 
-)
+# )
 
-)
-
+# )
+aaug=students.groupby("Department").agg(["min","max","count","mean","sum"])
+print(aaug)
